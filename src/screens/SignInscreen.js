@@ -17,7 +17,7 @@ const SignInscreen = ({navigation}) => {
     // console.warn('Login')
     // dispatch(login()) 
     if (username==="Vikas" && password==="123" ) {
-      Alert.alert(`Thank you ${username}`)
+      // Alert.alert(`Thank you ${username}`)
       // navigation.navigate("Home" , {myName: `${username}}` )
       navigation.navigate("Home"  )
     }else{

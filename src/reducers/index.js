@@ -1,8 +1,8 @@
-// // import navigateto from "./reducers"
-// import { combinedReducers } from 'redux'
+// import navigateto from "./reducers"
+import { combineReducers } from 'redux'
 
-// const rootReducer = combinedReducers({
-//     navigateto
-// })
+const rootReducer = combineReducers({
+    navigateto
+})
 
-// export default rootReducer
+export default rootReducer 
