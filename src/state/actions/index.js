@@ -2,14 +2,15 @@
 const login = ()=>{
     return {
         type: "LOGIN",
-        payload: {
-         username : user.name,
-         password : user.password
-        }
+        // payload: {
+        //  username : user.name,
+        //  password : user.password
+        // }
     }
 
 }
 
+export default login
 
 // const logout = ()=>{
 //     return {

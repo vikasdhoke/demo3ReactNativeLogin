@@ -6,11 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import SignInscreen from './src/screens/SignInscreen';
 import Homescreen from './src/screens/Homescreen';
-// import store from './src/store';
-
-
 import { Provider } from 'react-redux';
-import { useSelector,useDispatch } from 'react-redux';
+import store from './src/state/store';
 
 // store.subscribe(()=>console.log(store.getState()) )
 
@@ -30,6 +27,7 @@ const App = () => {
     //     {/* </NavigationContainer> */}
     //     {/* </Provider> */}
     // </SafeAreaView>***
+<Provider store={store}>
 
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Login'>
@@ -37,6 +35,8 @@ const App = () => {
         <Stack.Screen name="Home" component={Homescreen} />
       </Stack.Navigator>
     </NavigationContainer>
+
+    </Provider>
 
 
   )
