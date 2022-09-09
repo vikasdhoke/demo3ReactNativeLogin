@@ -2,15 +2,19 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import Custombutton from '../components/Custombutton'
 
-const Homescreen = () => {
+const Homescreen = (  {route , navigation,} ) => {
+  // const {myName }= route.params.myName;
+
     const onSignOutPressed =()=>{
         console.warn('Logged out')
+        navigation.navigate("Login"  )
     
       }
 
   return (
     <View style={styles.root} >
-      <Text>Homescreen</Text>
+      {/* <Text>Welcome  {myName} </Text> */}
+      <Text>Welcome   </Text>
 
       <Custombutton text="Logout" onPress={onSignOutPressed} />
     </View>
