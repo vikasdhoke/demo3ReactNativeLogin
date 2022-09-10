@@ -1,16 +1,16 @@
 
-const login = ()=>{
-    return {
-        type: "LOGIN",
-        // payload: {
-        //  username : user.name,
-        //  password : user.password
-        // }
-    }
+// const login = ()=>{
+//     return {
+//         type: "LOGIN",
+//         // payload: {
+//         //  username : user.name,
+//         //  password : user.password
+//         // }
+//     }
 
-}
+// }
 
-export default login
+// export default login
 
 // const logout = ()=>{
 //     return {
@@ -22,3 +22,12 @@ export default login
 //     }
 
 // }
+
+const BUY_CAKE = 'BUY_CAKE'
+
+function buyCake(){
+    return {
+        type : BUY_CAKE,
+
+    }
+}
