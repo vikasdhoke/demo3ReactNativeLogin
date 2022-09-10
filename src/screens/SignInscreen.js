@@ -4,26 +4,27 @@ import Custominput from '../components/Custominput';
 import Custombutton from '../components/Custombutton';
 // import {login,logout} from "./actions/index"
 import { useSelector,useDispatch } from 'react-redux';
+import navigatetoa from '../state/reducers/LoginOut';
 
 const SignInscreen = ({navigation}) => {
   const [username,setUserName] = useState('');
   const [password,setPassword] = useState('');
 
-  // const myState = useSelector((state)=> state.navigateto)
+  const myState = useSelector((state)=> state.navigateto)
 
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   const onSignInPressed =()=>{
-    // console.warn('Login')
+    // console.warn(dispatch(navigatetoa.myState.username))
     // dispatch(login()) 
-    if (username==="Vikas" && password==="123" ) {
+    // if (username==="Vikas" && password==="123" ) {
+    if (username ==="Vikas" && password ==="123" ) {
       // Alert.alert(`Thank you ${username}`)
       // navigation.navigate("Home" , {myName: `${username}}` )
       navigation.navigate("Home"  )
     }else{
       Alert.alert(`invalid credentials`)
-    }
-    
+    }   
 
   }
 
