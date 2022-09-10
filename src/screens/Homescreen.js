@@ -3,13 +3,14 @@ import React, { Component, useEffect, useState } from 'react'
 // import Custombutton from '../components/Custombutton'
 import { connect, useDispatch, useSelector } from 'react-redux'
 // import { buyCake } from '../redux'
-import { bindActionCreators } from 'redux'
-import actionCreators from '../redux/cake/index'
+import { buyCake } from '../redux/cake/Actioncreator/cakeActions'
+// import { bindActionCreators } from 'redux'
+// import actionCreators from '../redux/cake/index'
 
 const Homescreen = ( {props , navigation} ) => {
 // const Homescreen = ( props ,{navigation} ) => {
-   const dispatch = useDispatch()
-   const buyCake = bindActionCreators(actionCreators,dispatch )
+  //  const dispatch = useDispatch()
+  //  const buyCake = bindActionCreators(actionCreators,dispatch )
 
   //  console.warn(props.numOfCakes)
   //  console.warn( props)
@@ -44,7 +45,7 @@ const Homescreen = ( {props , navigation} ) => {
       <TouchableOpacity  style= {styles.buttonStyle} 
        text="Buy cake" 
       //  onPress={ ()=> dispatch(actionCreators.buyCake() )} 
-       onPress={ ()=> buyCake() } 
+      //  onPress={ ()=> buyCake() } 
        >
           <Text>Buy cake</Text>
         </TouchableOpacity>  
@@ -86,18 +87,18 @@ const styles = StyleSheet.create( {
   },
   });
 
-  // const mapStateToProps = state => {
-  //   return {
-  //     numOfCakes: state.numOfCakes
-  //   }
-  // }
+  const mapStateToProps = state => {
+    return {
+      numOfCakes: state.numOfCakes
+    }
+  }
 
-  // const mapDispatchToProps = dispatch => {
-  //   return {
-  //     buyCake: dispatch(buyCake())
+  const mapDispatchToProps = dispatch => {
+    return {
+      buyCake: dispatch(buyCake())
       
-  //   }
-  // }
+    }
+  }
 
-// export default connect(mapStateToProps, mapDispatchToProps) (Homescreen)
-export default  Homescreen
+export default connect(mapStateToProps, mapDispatchToProps) (Homescreen)
+// export default  Homescreen
