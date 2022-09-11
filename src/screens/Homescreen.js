@@ -11,27 +11,27 @@ const Homescreen = ( { navigation }) => {
 
   const onSignOutPressed = ()=>{ 
     // console.warn('Logged out')
-      navigation.navigate("Login")    
+      navigation.navigate("Login")     
     } 
  
-  return (
+  return ( 
     <View style={styles.root} >
-      <Text>Welcome  to Cake shop </Text>    
+      <Text  style={styles.wel} >Welcome  to Cake shop </Text>    
 
-          <Text>`no of cake available {count} `  </Text>    
+          <Text style={styles.wel} >no of cakes available {count}   </Text>    
 
       <TouchableOpacity  style= {styles.buttonStyle} 
        text="Buy cake" 
        onPress={ ()=> dispatch(decrement()) } 
        >
-          <Text>Buy cake</Text>
+          <Text style= {styles.buttonText} >Buy cake</Text>
         </TouchableOpacity>  
 
       <TouchableOpacity 
        style= {styles.buttonStyle}  
        onPress={onSignOutPressed}
        >
-          <Text>Logout</Text>
+          <Text style= {styles.buttonText} >Logout</Text>
        </TouchableOpacity>
     </View>
   )
@@ -57,10 +57,20 @@ const styles = StyleSheet.create( {
     width: '100%',    
     padding: 15,     
     borderRadius: 5,      
-    marginVertical: 5,    
+    marginVertical: 15,    
     paddingHorizontal: 10,    
     alignItems: 'center',    
   },
+
+  buttonText : { 
+    color: 'white',      
+  },
+
+  wel : { 
+    fontSize: 24,      
+  },
+
+
   });
 
 export default  Homescreen

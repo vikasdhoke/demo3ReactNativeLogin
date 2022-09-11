@@ -53,7 +53,7 @@ const SignInscreen2 = ({navigation}) => {
        style= {styles.buttonStyle}  
        onPress={onSignInPressed}
        >
-          <Text>Login</Text>
+          <Text style= {styles.buttonText} >Login</Text>
        </TouchableOpacity>
 
     </View>
@@ -105,6 +105,10 @@ buttonStyle : {
   marginVertical: 5,    
   paddingHorizontal: 10,    
   alignItems: 'center',    
+},
+
+buttonText : { 
+  color: 'white',      
 },
 
   });
