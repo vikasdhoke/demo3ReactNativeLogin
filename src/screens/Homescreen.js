@@ -1,7 +1,10 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { Component, useEffect, useState } from 'react'
 // import Custombutton from '../components/Custombutton'
-import { connect, useDispatch, useSelector } from 'react-redux'
+// import { connect, useDispatch, useSelector } from 'react-redux'
+import {  useDispatch, useSelector } from 'react-redux'
+// import { decrement, increment } from './counterSlice'
+import { decrement, selectCount } from '../redux/cake/counterSlice'
 // import { buyCake } from '../redux'
 import { buyCake } from '../redux/cake/Actioncreator/cakeActions'
 // import { bindActionCreators } from 'redux'
@@ -9,12 +12,18 @@ import { buyCake } from '../redux/cake/Actioncreator/cakeActions'
 
 const Homescreen = ( {props , navigation} ) => {
 // const Homescreen = ( props ,{navigation} ) => {
-  //  const dispatch = useDispatch()
+   const dispatch = useDispatch()
   //  const buyCake = bindActionCreators(actionCreators,dispatch )
 
   //  console.warn(props.numOfCakes)
-  //  console.warn( props)
-  const  numOfCakes = useSelector(state =>state.numOfCakes)
+   
+  // const  numOfCakes = useSelector(state =>state.numOfCakes)
+  // const count = useSelector(selectCount);
+
+  const count = useSelector((state) => state.counter.value)
+  // const count = useSelector((state) => state.counter) 
+  // console.log( state.counter)
+  // const count = useSelector((state) => state.counter.count)
     
   // const {myName }= route.params.myName;
 
@@ -36,16 +45,16 @@ const Homescreen = ( {props , navigation} ) => {
     <View style={styles.root} >
       {/* <Text>Welcome  {myName} </Text> */}
       <Text>Welcome  to Cake shop </Text>
-      <Text>no of cake 
-        {numOfCakes} 
-          </Text>
-      
+     
 
+          <Text>`no of cake available {count} `  </Text>      
+      
     
       <TouchableOpacity  style= {styles.buttonStyle} 
        text="Buy cake" 
       //  onPress={ ()=> dispatch(actionCreators.buyCake() )} 
       //  onPress={ ()=> buyCake() } 
+       onPress={ ()=> dispatch(decrement()) } 
        >
           <Text>Buy cake</Text>
         </TouchableOpacity>  
@@ -87,18 +96,18 @@ const styles = StyleSheet.create( {
   },
   });
 
-  const mapStateToProps = state => {
-    return {
-      numOfCakes: state.numOfCakes
-    }
-  }
+  // const mapStateToProps = state => {
+  //   return {
+  //     numOfCakes: state.numOfCakes
+  //   }
+  // }
 
-  const mapDispatchToProps = dispatch => {
-    return {
-      buyCake: dispatch(buyCake())
+  // const mapDispatchToProps = dispatch => {
+  //   return {
+  //     buyCake: dispatch(buyCake())
       
-    }
-  }
+  //   }
+  // }
 
-export default connect(mapStateToProps, mapDispatchToProps) (Homescreen)
-// export default  Homescreen
+// export default connect(mapStateToProps, mapDispatchToProps) (Homescreen)
+export default  Homescreen

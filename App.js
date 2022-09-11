@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 // import store from './src/redux/store'; 
 import Homescreen from './src/screens/Homescreen';
 import SignInscreen2 from './src/screens/SignInscreen2';
-import { store } from './src/redux/store';
+import store from './src/redux/store';
 
 // store.subscribe(()=>console.log(store.getState()) )
 
