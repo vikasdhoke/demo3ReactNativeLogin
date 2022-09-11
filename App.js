@@ -1,12 +1,13 @@
 
 import {SafeAreaView, Text, View , StyleSheet} from 'react-native'
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native';
+// import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider } from 'react-redux';
 import Homescreen from './src/screens/Homescreen';
 import SignInscreen2 from './src/screens/SignInscreen2';
 import store from './src/redux/store';
+import { NavigationContainer } from '@react-navigation/native';
 
 // store.subscribe(()=>console.log(store.getState()) )
 

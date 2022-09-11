@@ -2,18 +2,18 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import {  useDispatch, useSelector } from 'react-redux'
 import { decrement } from '../redux/cake/counterSlice'
-const Homescreen = (  navigation ) => {
 
-   const dispatch = useDispatch()
+
+const Homescreen = ( { navigation }) => {
+
+  const dispatch = useDispatch()
   const count = useSelector((state) => state.counter.value)
 
-    const onSignOutPressed =()=>{ 
-
-        console.warn('Logged out')
-        navigation.navigate("Login"  )
-    
-      }
-
+  const onSignOutPressed = ()=>{ 
+    // console.warn('Logged out')
+      navigation.navigate("Login")    
+    } 
+ 
   return (
     <View style={styles.root} >
       <Text>Welcome  to Cake shop </Text>    
