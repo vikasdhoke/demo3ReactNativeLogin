@@ -14,7 +14,7 @@ const Homescreen = (  navigation ) => {
     
       }
 
-  return (  
+  return (
     <View style={styles.root} >
       <Text>Welcome  to Cake shop </Text>    
 
@@ -31,8 +31,8 @@ const Homescreen = (  navigation ) => {
        style= {styles.buttonStyle}  
        onPress={onSignOutPressed}
        >
-          <Text>Logout</Text> 
-       </TouchableOpacity> 
+          <Text>Logout</Text>
+       </TouchableOpacity>
     </View>
   )
 }
