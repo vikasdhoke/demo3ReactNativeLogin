@@ -1,9 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from './cake/counterSlice'
+import {configureStore} from '@reduxjs/toolkit';
+import cakecounterReducer from './cake/counterSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    cakecounter: cakecounterReducer,
   },
-})
-
+});
